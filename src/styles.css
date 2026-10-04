@@ -1,0 +1,191 @@
+:root {
+  /* Design tokens. Every page uses these; add a token rather than a one-off colour. */
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'IBM Plex Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-sans);
+  color: #17202b;
+  background: #f6f5f1;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  --header-height: 73px;
+  --page-width: 720px;
+  --content-width: 560px;
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --surface-2: #f9f8f5;
+  --ink: #17202b;
+  --ink-2: #3a4553;
+  --muted: #676d78;
+  --line: #e3e0d8;
+  --line-strong: #cbc7bb;
+  --accent: #1f5b45;
+  --accent-hover: #174634;
+  --accent-soft: #eaf1ed;
+  --accent-line: #b7d0c2;
+  --accent-ink: #ffffff;
+  --success: #1e6a4c;
+  --success-soft: #ebf3ee;
+  --success-line: #a9cdb9;
+  --warn: #8a4b12;
+  --warn-mid: #b8742f;
+  --warn-soft: #fbf2e6;
+  --warn-line: #e5c59d;
+  --danger: #9b2c1f;
+  --danger-soft: #fbeeeb;
+  --danger-line: #e4bcb3;
+  --radius: 4px;
+  --radius-card: 6px;
+  --shadow-card: 0 1px 0 #17202b08;
+  --shadow-lift: 0 1px 0 #17202b0d, 0 8px 20px #17202b12;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  /* Night panels: landing hero and closing call only. */
+  --night: #0d1713;
+  --night-2: #16241e;
+  --night-ink: #eef3f0;
+  --night-muted: #9db1a7;
+  --night-line: #ffffff10;
+  --night-line-strong: #ffffff24;
+  --night-glow: #2f8a6455;
+  --night-glow-2: #1f5b4566;
+  --accent-bright: #7fd1a8;
+}
+@media (min-width: 1024px) {
+  :root { --page-width: 1200px; --content-width: 880px; }
+}
+/* Shared motion: screens and feedback rise in; the reduced-motion rule below turns this off. */
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes pop-in { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+.screen-enter { animation: rise-in .32s var(--ease-out) both; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+button, input, select, textarea { font: inherit; }
+button, a, input, summary { -webkit-tap-highlight-color: transparent; }
+button, summary { cursor: pointer; touch-action: manipulation; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+a { color: inherit; text-underline-offset: 3px; touch-action: manipulation; }
+button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+input, select, textarea { font-size: 16px; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { line-height: 1.2; font-family: var(--font-serif); font-weight: 600; font-optical-sizing: auto; letter-spacing: -.01em; }
+body { background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+/* Small labels and feedback headings stay in the sans. */
+.case-feedback h3, .case-reveal h3, .framework-method h3, .lesson-group > h3, .framework-related h3, .previous-case-review h3, .recall-item h4 { font-family: var(--font-sans); letter-spacing: 0; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-content { position: fixed; left: 16px; top: -100px; z-index: 100; padding: 12px 18px; border-radius: var(--radius); background: var(--ink); color: white; opacity: 0; pointer-events: none; }
+.skip-content:focus { top: 12px; opacity: 1; pointer-events: auto; }
+.site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: #f6f5f1e6; -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); }
+h1, h2, h3, [tabindex='-1'] { scroll-margin-top: 90px; }
+h1[tabindex='-1']:focus, h2[tabindex='-1']:focus, h3[tabindex='-1']:focus { outline: none; }
+.site-header-inner { max-width: var(--page-width); min-height: 72px; padding: 0 24px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-family: var(--font-serif); font-size: 23px; font-weight: 600; letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
+.site-nav { display: flex; gap: 4px; }
+.site-nav a { display: grid; place-items: center; min-height: 44px; padding: 0 16px; border-radius: var(--radius-card); font-size: 14px; font-weight: 600; text-decoration: none; color: var(--muted); transition: background .15s, color .15s; }
+.site-nav a:hover:not([aria-current='page']) { color: var(--ink); background: var(--surface-2); }
+.site-nav a[aria-current='page'] { background: var(--accent-soft); color: var(--accent); }
+.page-container, .math-page { max-width: var(--page-width); padding: 20px 24px 40px; margin: 0 auto; }
+/* Fluid full width on laptops: gutters scale with the viewport instead of a page cap. */
+@media (min-width: 1024px) { .site-header-inner, .page-container, .math-page { max-width: none; } }
+@media (min-width: 1280px) { .site-header-inner { padding-left: 32px; padding-right: 32px; } .page-container, .math-page { padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 1600px) { .site-header-inner { padding-left: 40px; padding-right: 40px; } .page-container, .math-page { padding-left: 40px; padding-right: 40px; } }
+.page-heading { margin: 22px 0 18px; }
+.page-heading h1, .page-heading .card-screen-heading { margin: 0 0 6px; font-size: 34px; font-weight: 600; letter-spacing: -.015em; }
+.page-heading p { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+/* Shared across pages, including the ones that do not load the cases stylesheet. */
+.case-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: .01em; color: var(--accent); line-height: 1.6; }
+.case-start-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 0; border-radius: var(--radius); font-size: 13px; font-weight: 600; background: var(--accent-soft); color: var(--accent); transition: background .15s, transform .1s; }
+.case-start-button:hover { background: var(--accent-line); }
+.case-start-button:active:not(:disabled) { transform: scale(.98); }
+.case-local-note, .case-source-citation { color: var(--muted); font-size: 11px; line-height: 1.8; margin-top: 18px; }
+.case-storage-warning { background: var(--warn-soft); border: 1px solid var(--warn-line); border-radius: var(--radius); padding: 12px 16px; margin-top: 18px; font-size: 12px; color: var(--warn); line-height: 1.6; }
+.surface { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+
+/* About page */
+@media (max-width: 560px) {
+  :root { --header-height: 65px; }
+  .site-header-inner { min-height: 64px; padding: 0 16px; gap: 10px; }
+  .site-brand { font-size: 20px; }
+  .site-nav a { padding: 0 9px; font-size: 13px; }
+  .page-container, .math-page { padding: 20px 16px 32px; }
+}
+@media (max-width: 360px) {
+  .site-header-inner { gap: 6px; }
+  .site-brand { font-size: 19px; }
+  .site-nav { gap: 2px; }
+  .site-nav a { padding: 0 7px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* App shell: sticky sidebar nav, content column, optional filter rail */
+.app-shell { display: block; }
+.app-nav h3, .app-aside h3, .app-filters-body h3 { margin: 18px 0 4px; font-family: var(--font-sans); font-size: 11px; font-weight: 600; color: var(--muted); }
+.app-nav h3:first-child, .app-aside h3:first-child, .app-filters-body h3:first-child { margin-top: 0; }
+.app-nav a, .app-nav button, .app-aside button, .app-filters-body button { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 40px; padding: 6px 10px; border: 0; border-radius: var(--radius); background: transparent; color: var(--ink-2); font: inherit; font-size: 13px; text-align: left; text-decoration: none; cursor: pointer; }
+.app-nav a svg, .app-nav button svg { flex-shrink: 0; }
+.app-nav a .count, .app-nav button .count, .app-aside button .count, .app-filters-body button .count { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.app-nav a[aria-current='page'], .app-nav button[aria-current='page'], .app-nav button[aria-pressed='true'], .app-aside button[aria-pressed='true'], .app-filters-body button[aria-pressed='true'] { background: var(--accent-soft); color: var(--accent); }
+.app-nav a:hover:not([aria-current='page']), .app-nav button:hover:not([aria-pressed='true']):not([aria-current='page']), .app-aside button:hover:not([aria-pressed='true']), .app-filters-body button:hover:not([aria-pressed='true']) { background: var(--surface-2); }
+.app-nav a:focus-visible, .app-nav button:focus-visible, .app-aside button:focus-visible, .app-filters-body button:focus-visible, .app-filters > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.app-aside-show-all { margin-top: 4px; font-size: 12px; color: var(--accent); }
+.app-filters { margin-bottom: 18px; padding: 4px 16px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface-2); }
+.app-filters > summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; font-weight: 600; font-size: 13px; }
+@media (min-width: 1024px) {
+  .app-shell { display: grid; grid-template-columns: 248px minmax(0, 1fr) 264px; gap: 24px; align-items: start; }
+  .app-shell-no-aside { grid-template-columns: 248px minmax(0, 1fr); }
+  .app-shell-tabs, .app-filters, .app-mobile-only { display: none; }
+  .app-nav { grid-column: 1; }
+  .app-main { grid-column: 2; min-width: 0; }
+  .app-aside { grid-column: 3; }
+  .app-nav, .app-aside { position: sticky; top: calc(var(--header-height) + 20px); align-self: start; max-height: calc(100vh - var(--header-height) - 40px); overflow: auto; scrollbar-width: thin; }
+}
+@media (min-width: 1280px) { .app-shell { gap: 28px; } }
+@media (min-width: 1600px) {
+  .app-shell { grid-template-columns: 272px minmax(0, 1fr) 288px; }
+  .app-shell-no-aside { grid-template-columns: 272px minmax(0, 1fr); }
+}
+@media (max-width: 1023px) {
+  .app-shell { display: flex; flex-direction: column; }
+  .app-shell-tabs { order: 1; }
+  .app-filters { order: 2; }
+  .app-main { order: 3; min-width: 0; }
+  .app-nav, .app-aside { display: none; }
+}
+
+/* Unambiguous answer verdicts */
+.verdict { display: flex; align-items: flex-start; gap: 8px; padding: 12px 14px; border: 1px solid; border-left-width: 3px; border-radius: var(--radius); font-size: 15px; line-height: 1.5; }
+.verdict svg { flex-shrink: 0; margin-top: 2px; }
+.verdict strong { font-weight: 650; }
+.verdict-detail { font-weight: 400; color: var(--ink-2); }
+.verdict-correct { color: var(--success); background: var(--success-soft); border-color: var(--success-line); border-left-color: var(--success); }
+.verdict-wrong { color: var(--danger); background: var(--danger-soft); border-color: var(--danger-line); border-left-color: var(--danger); }
+.verdict-answer strong { color: var(--ink); }
+
+.app-main > .math-page { max-width: none; padding: 0; }
+
+@media (min-width: 1024px) {
+  /* Fluid pages still keep a comfortable reading measure on focused screens. */
+  .case-workspace,
+  .case-review,
+  .math-lesson-guide,
+  .math-lesson-practice,
+  .math-lesson-results,
+  .framework-guide,
+  .framework-session,
+  .framework-results,
+  .industry-detail,
+  .results-screen,
+  .card-browse { max-width: var(--content-width); margin-left: auto; margin-right: auto; }
+  /* Long prose inside the shell's main column keeps a measure. */
+  .app-main :is(.overview-status, .case-method, .recall-sheet header p, .recall-card p) { max-width: 72ch; }
+  /* The maths setup caps its form width rather than stretching. */
+  .cases-page .app-main .brain-setup-grid { max-width: 760px; }
+}
+
+.error-boundary { display: grid; place-items: center; min-height: 50vh; }
+.error-boundary-card { max-width: 420px; padding: 24px; text-align: center; }
+.error-boundary-card p { margin: 0 0 8px; font-size: 14px; }
+.error-boundary-card p + p { color: var(--muted); }
+.error-boundary-card .case-start-button { margin-top: 12px; min-height: 44px; }

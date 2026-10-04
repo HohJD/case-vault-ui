@@ -1,0 +1,90 @@
+.cards-screen { padding-bottom: 40px; }
+.cards-screen.cards-round { max-width: var(--content-width); margin: 0 auto; }
+.card-next-up { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-card); background: var(--surface); }
+.card-next-up h2 { font-size: 20px; margin: 6px 0; }
+.card-next-up p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.card-next-up .math-button { flex-shrink: 0; }
+.card-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; margin: 12px 0 18px; padding: 14px 20px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); }
+.card-settings { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.card-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; color: var(--ink); cursor: pointer; }
+.card-toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+.card-again { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
+.card-again span { margin-right: 4px; }
+.card-again button { min-height: 44px; padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.card-again button[aria-pressed='true'] { border-color: var(--ink); color: var(--ink); font-weight: 600; }
+.card-overall { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 12px; color: var(--muted); }
+.card-overall strong { color: var(--ink); font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.deck-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 14px; }
+.deck-grid li { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow-card); }
+.deck-copy { min-width: 0; }
+.deck-copy h2 { font-family: var(--font-serif); font-size: 18px; margin: 0 0 4px; }
+.deck-copy p { margin: 0 0 6px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.deck-meta { font-size: 11px; color: var(--muted); }
+.deck-actions { display: flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 12px; }
+@media (min-width: 561px) { .deck-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .deck-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
+.card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.card-count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.card-progress { display: flex; gap: 4px; margin: 10px 0 18px; }
+.card-progress span { flex: 1; height: 4px; border-radius: 2px; background: var(--line); }
+.card-progress .current { background: var(--accent); }
+.card-progress .right { background: var(--success); }
+.card-progress .wrong { background: var(--danger); }
+.card-panel { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); animation: rise-in .28s var(--ease-out) both; }
+.card-panel h2 { font-size: 26px; line-height: 1.3; margin: 10px 0 20px; }
+.card-panel h2.card-prompt-long { font-family: var(--font-sans); font-size: 17px; font-weight: 500; line-height: 1.6; letter-spacing: 0; }
+.card-choices { display: grid; gap: 8px; }
+.card-choices button { display: flex; align-items: flex-start; gap: 10px; width: 100%; min-height: 52px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; line-height: 1.6; text-align: left; transition: border-color .15s, background .15s; }
+.card-choices button:disabled { cursor: default; opacity: 1; -webkit-text-fill-color: currentColor; }
+.card-choices button svg { flex-shrink: 0; margin-top: 3px; }
+.card-choices .card-right { border-color: var(--success-line); background: var(--success-soft); color: var(--success); }
+.card-choices .card-wrong { border-color: var(--danger-line); background: var(--danger-soft); color: var(--danger); }
+.card-choices .card-dim { color: var(--muted); }
+.card-feedback { margin-top: 18px; padding: 16px 18px; border-radius: var(--radius-card); background: var(--surface-2); font-size: 13px; line-height: 1.75; }
+.card-feedback p { margin: 0 0 8px; }
+.card-feedback p:last-child { margin-bottom: 0; }
+.card-trap { color: var(--muted); }
+.card-example { color: var(--ink-2); }
+.card-figure { display: block; width: 100%; max-width: 320px; height: auto; margin: 14px auto 2px; }
+.card-sound { border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 13px; padding: 0 4px; }
+.card-sound[aria-pressed='false'] { color: var(--muted); }
+.card-grade-label { margin: 18px 0 8px; font-size: 12px; color: var(--muted); }
+.card-grades { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.card-grade { display: grid; gap: 2px; place-items: center; min-height: 56px; padding: 8px 4px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); font-size: 13px; font-weight: 600; transition: border-color .15s, background .15s; }
+.card-grade small { font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--muted); }
+.card-grade.grade-again { color: var(--warn); }
+.card-grade.grade-easy { color: var(--success); }
+.card-grade.suggested { border-color: var(--warn-line); background: var(--warn-soft); }
+.card-missed { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 8px; }
+.card-missed li { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); }
+.card-missed strong { font-size: 14px; }
+.card-missed p { margin: 6px 0 0; font-size: 13px; line-height: 1.65; color: var(--muted); }
+.card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+.card-browse { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.card-browse li { padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); font-size: 13px; line-height: 1.7; }
+.card-browse-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.card-browse-head strong { font-family: var(--font-serif); font-size: 17px; font-weight: 600; }
+.card-short { margin: 0 0 6px; font-size: 12px; color: var(--muted); }
+.card-browse p { margin: 0 0 6px; }
+.card-browse p:last-child { margin-bottom: 0; }
+.card-meter { display: inline-flex; gap: 3px; flex-shrink: 0; }
+.card-meter > span { width: 14px; height: 5px; border-radius: 3px; background: var(--line); }
+.card-meter > .filled { background: var(--success); }
+@media (hover: hover) {
+  .card-choices button:not(:disabled):hover { border-color: var(--line-strong); }
+  .card-grade:hover { border-color: var(--line-strong); background: var(--surface-2); }
+  .deck-grid li:hover { background: var(--surface-2); }
+}
+@media (max-width: 560px) {
+  .card-next-up { flex-direction: column; align-items: stretch; padding: 18px; }
+  .card-next-up .math-button { width: 100%; }
+  .deck-actions { justify-content: space-between; }
+  .card-panel { padding: 18px 16px; }
+  .card-panel h2 { font-size: 22px; }
+  .card-grades { position: sticky; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); gap: 4px; }
+  .card-grade { min-height: 52px; font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .card-settings { gap: 6px; }
+  .card-again button { padding: 6px 8px; }
+}

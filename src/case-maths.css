@@ -1,0 +1,93 @@
+.case-maths { padding-bottom: 12px; }
+.lesson-next { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 22px 24px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-card); background: var(--surface); margin: 24px 0; }
+.lesson-next h3 { font-size: 20px; letter-spacing: -.01em; margin: 10px 0 8px; }
+.lesson-next p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+.lesson-library-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.lesson-library-tools > span { color: var(--muted); font-size: 12px; }
+.lesson-group { margin: 24px 0; }
+.lesson-group > h3 { margin: 0 0 10px 2px; font-size: 12px; font-weight: 650; color: var(--muted); }
+.lesson-group ol { margin: 0; padding: 0; list-style: none; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow-card); overflow: hidden; }
+.lesson-group li + li { border-top: 1px solid var(--line); }
+.math-lesson-row { transition: background .15s; display: flex; align-items: center; gap: 16px; width: 100%; min-height: 106px; padding: 20px; text-align: left; color: var(--ink); border: 0; background: transparent; }
+.math-lesson-row:focus-visible { outline-offset: -4px; }
+.lesson-number { display: grid; place-items: center; width: 38px; height: 38px; border-radius: var(--radius-card); flex-shrink: 0; color: var(--accent); background: var(--accent-soft); font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.lesson-group:nth-of-type(2) .lesson-number { color: var(--success); background: var(--success-soft); }
+.lesson-number.lesson-practised { color: var(--success); background: var(--success-soft); }
+.lesson-row-copy { flex: 1; min-width: 0; }
+.lesson-row-title, .lesson-row-description, .lesson-row-status { display: block; }
+.lesson-row-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; letter-spacing: -.01em; line-height: 1.4; }
+.lesson-row-description { font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 5px; }
+.lesson-row-status { font-size: 11px; color: var(--muted); margin-top: 7px; line-height: 1.6; }
+.math-lesson-row > svg { flex-shrink: 0; color: var(--muted); }
+.lesson-empty { font-size: 14px; color: var(--muted); padding: 24px; line-height: 1.8; border: 1px dashed var(--line); border-radius: var(--radius-card); }
+.math-lesson-guide > .study-section-heading, .math-lesson-results > .study-section-heading { margin-top: 20px; }
+.lesson-method { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius-card); padding: 24px; }
+.lesson-formula { padding: 16px 18px; border: 1px solid var(--accent-line); background: var(--accent-soft); color: var(--accent-hover); border-radius: var(--radius-card); font-size: 14px; line-height: 1.8; overflow-wrap: anywhere; }
+.lesson-method-steps { list-style: none; padding: 0; margin: 22px 0 0; }
+.lesson-method-steps li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; margin-top: 16px; }
+.lesson-method-steps li > span { font-size: 12px; font-weight: 650; color: var(--accent); line-height: 1.8; padding-top: 1px; }
+.lesson-method-steps p { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 0; }
+.lesson-worked { margin: 16px 0; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); }
+.lesson-worked > summary { padding: 18px 20px; min-height: 56px; font-size: 14px; font-weight: 600; line-height: 1.7; }
+.lesson-worked > summary span { display: block; font-size: 11px; font-weight: 400; color: var(--muted); margin-top: 4px; }
+.lesson-worked > div { padding: 2px 20px 18px; font-size: 14px; line-height: 1.8; }
+.lesson-worked ol { padding-left: 20px; margin-bottom: 0; }
+.lesson-worked li { padding-left: 5px; }
+.lesson-worked li strong { color: var(--success); font-size: 12px; }
+.lesson-worked li p { margin: 6px 0 16px; }
+.lesson-trap { display: flex; align-items: flex-start; gap: 12px; padding: 18px 20px; margin: 16px 0 24px; background: var(--warn-soft); border-radius: var(--radius-card); color: var(--warn); }
+.lesson-trap > svg { flex-shrink: 0; margin-top: 2px; }
+.lesson-trap strong { font-size: 12px; }
+.lesson-trap p { font-size: 13px; line-height: 1.8; margin: 7px 0 0; }
+.lesson-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0 12px; }
+.lesson-practice-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lesson-practice-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; font-weight: 600; line-height: 1.7; margin: 18px 0 12px; }
+.lesson-practice-title span { flex-shrink: 0; font-size: 11px; font-weight: 400; color: var(--muted); }
+.lesson-stepper { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; list-style: none; padding: 0; margin: 0 0 20px; }
+.lesson-stepper li { display: flex; align-items: center; gap: 8px; padding: 10px 8px; font-size: 12px; border-bottom: 2px solid var(--line); color: var(--muted); }
+.lesson-stepper li[aria-current='step'] { color: var(--accent); border-color: var(--accent); font-weight: 650; }
+.lesson-stepper li.step-checked { color: var(--success); border-color: var(--success-line); }
+.lesson-stepper li > span { display: grid; place-items: center; font-size: 10px; width: 18px; height: 18px; border-radius: 50%; background: var(--surface-2); flex-shrink: 0; }
+.lesson-scenario { padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--radius-card); margin-bottom: 16px; background: var(--surface-2); }
+.lesson-scenario > p { font-size: 14px; line-height: 1.8; margin: 10px 0 12px; }
+.lesson-scenario .case-exhibit-wrap { background: var(--surface); border-radius: var(--radius); }
+.lesson-reminder { margin-top: 18px; }
+.lesson-reminder p { margin-bottom: 10px; }
+.lesson-reminder small { display: block; color: var(--muted); font-size: 11px; }
+.lesson-feedback-focus:focus { outline: none; }
+.lesson-transfer { padding-top: 24px; margin-top: 28px; border-top: 1px solid var(--line); }
+.lesson-transfer h3 { font-size: 17px; letter-spacing: -.01em; margin-bottom: 10px; }
+.lesson-transfer p { font-size: 13px; line-height: 1.8; color: var(--muted); }
+@media (hover: hover) { .math-lesson-row:hover { background: var(--surface-2); } }
+@media (max-width: 560px) {
+  .lesson-next { padding: 20px; gap: 16px; }
+  .lesson-next .math-button { width: 100%; }
+  .math-lesson-row { gap: 12px; padding: 18px 14px; }
+  .lesson-number { width: 32px; height: 32px; border-radius: var(--radius-card); }
+  .lesson-row-title { font-size: 15px; }
+  .lesson-row-description { font-size: 12px; }
+  .lesson-method { padding: 18px; }
+  .lesson-method-steps li { grid-template-columns: 1fr; gap: 4px; }
+  .lesson-formula { padding: 14px; font-size: 13px; }
+  .lesson-stepper { gap: 4px; }
+  .lesson-stepper li { gap: 5px; padding: 9px 2px; font-size: 11px; }
+  .lesson-scenario { padding: 18px; }
+}
+
+/* Estimation anchors reference */
+.estimation-anchors { margin-top: 22px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); }
+.estimation-anchors > summary { display: flex; align-items: center; min-height: 64px; padding: 14px 18px; cursor: pointer; list-style: none; }
+.estimation-anchors > summary::-webkit-details-marker { display: none; }
+.estimation-anchors > summary::after { content: '+'; margin-left: auto; font: 500 22px var(--mono); color: var(--accent); }
+.estimation-anchors[open] > summary::after { content: '−'; }
+.estimation-anchors summary span { display: grid; gap: 2px; }
+.estimation-anchors summary strong { font-family: var(--font-serif); font-size: 18px; }
+.estimation-anchors summary small { font-size: 13px; color: var(--muted); }
+.estimation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; padding: 0 18px 4px; }
+.estimation-grid section { padding: 12px 14px; border-radius: 14px; background: var(--surface-2); }
+.estimation-grid h4 { margin: 0 0 8px; font-family: var(--font-sans); font-size: 12px; font-weight: 600; color: var(--accent); }
+.estimation-grid dl { margin: 0; display: grid; gap: 6px; }
+.estimation-grid dl div { display: grid; gap: 1px; }
+.estimation-grid dt { font-size: 13px; font-weight: 600; }
+.estimation-grid dd { margin: 0; font: 13px/1.5 var(--mono); color: var(--ink-2); }
+.estimation-anchors .case-local-note { padding: 0 18px 14px; }

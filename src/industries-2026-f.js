@@ -1,0 +1,312 @@
+// Continued: same source, same rules (own words, source facts only).
+import { base, chain, forces, pairs } from './industries-2026-b.js'
+
+export const INDUSTRIES_2026_F = [
+  {
+    id: 'nbfc-lending', name: 'NBFCs and lending', tag: 'Financial services', ...base(450),
+    summary: 'NBFCs lend where banks reach less. CRISIL expects their assets to pass ₹50 lakh crore by March 2027.',
+    overview: [
+      'NBFCs focus on underserved, specialised and higher-yield lending.',
+      'The RBI sorts them by size, activity and systemic risk.',
+      'They fund themselves with bank loans, bonds, commercial paper and securitisation.',
+    ],
+    segments: [
+      'Asset-backed: vehicle, gold, housing and other secured loans',
+      'Consumer and inclusion lending: personal loans, durables finance, small-ticket loans and microfinance',
+      'MSME and business: working capital, business loans and loans against property',
+    ],
+    valueChain: chain([
+      ['Funding and product design', 'Raising borrowings and capital', 'Designing and pricing loans', 'ALM and portfolio planning'],
+      ['Customer acquisition', 'Sourcing through branches, dealers and digital', 'KYC', 'Screening leads and processing applications'],
+      ['Underwriting', 'Checking bureau records and income', 'Valuing collateral and scoring risk', 'Approving and pricing for risk'],
+      ['Disbursement and servicing', 'Paperwork and payout', 'EMIs and account service', 'Cross-selling and support'],
+      ['Collections', 'Watching repayments and delinquency', 'Collecting and restructuring', 'Recovery, repossession and write-offs'],
+    ]),
+    forces: forces([
+      ['suppliers', 'High', 'NBFCs depend on banks and markets for funding, which gives lenders leverage.'],
+      ['buyers', 'Medium', 'Prime borrowers can shop around; underserved ones have fewer options.'],
+      ['entrants', 'Low', 'Licences, capital and compliance keep newcomers out.'],
+      ['substitutes', 'High', 'Banks, fintechs and informal lenders are all alternatives.'],
+      ['rivalry', 'High', 'Overlapping products and aggressive pricing.'],
+    ]),
+    pestel: pairs([
+      ['Political', 'Inclusion, MSME and infrastructure policies shape credit demand and priorities.'],
+      ['Economic', 'Interest rates, liquidity, growth and the monsoon affect funding costs and repayments.'],
+      ['Technological', 'Digital KYC, Account Aggregators and AI underwriting improve lending and servicing.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Interest income', 'Fees', 'Commissions', 'Securitisation income', 'Investment income'] },
+      { title: 'Cost drivers', items: ['Finance costs', 'Credit costs', 'Staff', 'Operating expenses', 'Technology'] },
+    ],
+    kpis: pairs([
+      ['AUM or loan book', 'All outstanding loans the lender manages.'],
+      ['NIM or spread', 'Yield on loans less cost of funds, against earning assets.'],
+      ['Cost of funds', 'Average interest paid on borrowing.'],
+      ['GNPA and NNPA', 'Bad loans before and after provisions, as a share of loans.'],
+      ['Collection efficiency', 'What was collected as a share of what was due.'],
+    ]),
+    terms: pairs([
+      ['ALM', 'Asset-liability management: matching the maturity and liquidity of loans and borrowings.'],
+      ['LTV', 'Loan-to-value: the loan as a share of the collateral’s value.'],
+      ['DPD', 'Days past due on a repayment.'],
+    ]),
+    growth: [
+      'Gold loans rose 105% to May 2026, and NBFCs’ share of retail gold lending went from 28% to 40%.',
+      'NBFCs reach where banks do not: 45% of small loans against property, mostly outside the metros.',
+      'Vehicle finance keeps growing and should reach ₹11 lakh crore by FY27.',
+    ],
+    challenges: [
+      'Most cannot take deposits, so their money costs more than a bank’s.',
+      'Bank lending to NBFCs has flattened at ₹13.8 lakh crore in September 2025, barely up on a year earlier.',
+      'Microfinance is still under strain: NBFC-MFI assets fell 12% in FY25.',
+    ],
+    models: pairs([
+      ['Balance-sheet lender', 'Keeps the loan, earns the whole spread and takes all the credit and funding risk (Bajaj Finance, Shriram).'],
+      ['Co-lending with a bank', 'The NBFC sources the customer and a bank with cheaper funds takes part of the loan. Less spread, much less capital.'],
+      ['Originate and sell', 'Makes loans and sells the pool to banks or investors, freeing capital and turning interest into fees.'],
+    ]),
+    facts: [
+      'An NBFC can never borrow as cheaply as a bank, so it has to win on reach or on collections.',
+      'Rising gold prices have made gold loans the biggest retail credit product outside housing, up 42% a year since March 2024.',
+      'The RBI’s four-layer framework means compliance grows with size, so scaling up adds cost.',
+      'A record ₹1.87 lakh crore of loan pools changed hands in the first nine months of FY26; gold and vehicle pools rose 35%.',
+      'Under the RBI’s harshest stress scenario, bad loans rise to 5.4% from 2.3% and 11 of 174 NBFCs breach the minimum capital level.',
+    ],
+    news: [
+      'CRISIL forecasts 18-19% asset growth that takes NBFCs past ₹50 lakh crore by March 2027, with funding the main worry.',
+      'Nine months into FY26, pool sales were ₹1.87 lakh crore, 5% higher, led by a 35% jump in NBFC gold and vehicle pools.',
+      'Microfinance remains under pressure: NBFC-MFI assets shrank 12% in FY25 and provisions almost doubled.',
+    ],
+    caseIds: ['bnpl-uae-entry', 'investment-platform-arpu'],
+  },
+  {
+    id: 'oil-gas', name: 'Oil and gas', tag: 'Energy', ...base(452),
+    summary: 'The 3rd largest crude importer and 4th largest refiner, now relying on imports for a record 89.4% of crude.',
+    overview: [
+      'India has 24 refineries, 18 of them public sector. It is the third-biggest crude importer and the fourth-biggest refiner.',
+      'The largest players include IOCL, ONGC and Reliance Industries.',
+    ],
+    segments: [
+      'Upstream: exploring for and producing oil and gas, led by ONGC and Cairn. Domestic output is falling',
+      'Downstream: refining and selling fuels, dominated by IOCL and Reliance',
+      'Natural gas: pipeline distribution, led by GAIL and IOCL',
+      'Refined products: petrol, diesel, LPG and jet fuel sold through big retail networks',
+    ],
+    valueChain: chain([
+      ['Exploration', 'Getting a government licence', 'Geological surveys of on- and offshore reserves'],
+      ['Production', 'Sanctioning the project', 'The field development plan', 'Building facilities and drilling', 'Extracting until the field is spent'],
+      ['Storage and transport', 'Pipelines, tankers and trucks', 'Crude in ground tanks, gas in underground reservoirs'],
+      ['Downstream', 'Refining and converting crude into fuels and chemicals'],
+      ['Distribution', 'Wholesale and retail sales to businesses, governments and the public'],
+    ]),
+    forces: forces([
+      ['suppliers', 'High', 'Oilfield service and equipment firms are powerful, and reliance on OPEC imports grew sharper with the Hormuz disruption.'],
+      ['buyers', 'Medium', 'Industrial buyers purchase in bulk and watch price.'],
+      ['entrants', 'Low', 'Huge capital, regulation and entrenched infrastructure.'],
+      ['substitutes', 'Medium', 'Renewables and EVs are growing cleaner alternatives.'],
+      ['rivalry', 'High', 'Indian and foreign players compete, and spread across the value chain.'],
+    ]),
+    pestel: pairs([
+      ['Political', 'The West Asia war and Hormuz disruption changed sourcing: about 70% of crude now avoids the Strait.'],
+      ['Economic', 'Brent reached US$117 a barrel in April 2026, and Russian crude went from a discount to a premium.'],
+      ['Environmental', 'Pressure to cut emissions and move to renewables.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Selling crude, refined products and petrochemicals', 'Transport, storage and pipeline tariffs', 'Distributing and retailing products', 'Trading'] },
+      { title: 'Cost drivers', items: ['Exploration, drilling and extraction', 'Transport and storage', 'Energy and labour'] },
+    ],
+    kpis: pairs([
+      ['Barrels per day', 'How fast crude is produced.'],
+      ['Gross refining margin', 'Profit from turning crude into products.'],
+      ['Refinery utilisation', 'Output against maximum capacity.'],
+      ['Reserve replacement ratio', 'New reserves found or bought, against what was produced.'],
+    ]),
+    terms: pairs([
+      ['Upstream and downstream', 'Upstream finds and produces oil and gas. Downstream refines and sells it.'],
+      ['PPA', 'A power purchase agreement: a long-term contract to buy electricity.'],
+      ['Crack spread', 'The gap between product prices and crude, which drives GRM directly.'],
+    ]),
+    growth: [
+      'Industry and cities are raising oil demand quickly.',
+      'Refining capacity is heading to 310 MTPA by 2028, and record product cracks lift margins.',
+      'Policy backs ethanol blending and infrastructure.',
+    ],
+    challenges: [
+      'Pressure to cut emissions and move to cleaner energy.',
+      'A record 89.4% of crude is imported, leaving the sector open to global price swings.',
+      'Disruption at Hormuz and Bab al-Mandab raised freight, insurance and voyage times, while strategic reserves cover only about 9.5 days.',
+    ],
+    models: pairs([
+      ['Integrated', 'Reliance runs upstream, midstream and downstream, controlling the whole chain.'],
+      ['Upstream', 'ONGC explores and produces, selling crude to refiners.'],
+      ['Downstream', 'BPCL and HPCL focus on refining and selling fuel.'],
+      ['Gas distribution', 'GAIL leads in moving and distributing gas by pipeline.'],
+    ]),
+    facts: [
+      'India is a leading exporter of petroleum products, worth about US$44 billion.',
+      'The country has over 10,000 km of crude pipelines and about 25,000 km of gas pipelines.',
+      'Strategic reserves cover only about 9.5 days of net imports, or about 74 days counting company storage.',
+      '100% FDI and the National Biofuel Policy aim to raise domestic production and cut imports.',
+      'Sourcing has flipped: Russian crude now costs a premium, the US share of imports nearly doubled to 8.1%, and Iranian and Venezuelan oil is back.',
+    ],
+    news: [
+      'April 2026: Brent hit US$117 a barrel after the Hormuz disruption, and the IEA released 400 million barrels of reserves.',
+      'The petroleum ministry says about 70% of crude now comes from 40 countries outside the Strait of Hormuz.',
+      'FY26 import dependence hit records of 89.4% for crude and 50.6% for gas as domestic output kept falling.',
+    ],
+    caseIds: ['field-engineer-attrition'],
+  },
+  {
+    id: 'online-gaming', name: 'Online gaming', tag: 'Media', ...base(454),
+    summary: 'Money games were banned in 2025. The rest of the market grew 17% to US$1.5 billion even as gamers fell to 555 million.',
+    overview: [
+      'The PROG Act 2025 and its Rules from 1 May 2026 banned online money games.',
+      'Without real-money gaming, the market grew 17% to US$1.5 billion in 2025, while gamers fell 9% to 555 million as bettors left.',
+      'About 90% of gamers play mainly on mobile.',
+    ],
+    segments: [
+      'Casual games: mass-market titles like Ludo King, now the main source of growth',
+      'Mid-core and shooters: free-to-play titles such as BGMI and Free Fire MAX, with the deepest engagement',
+      'E-sports: now a recognised sport under the National Sports Governance Act, 2025',
+    ],
+    valueChain: chain([
+      ['Development', 'Game studios', 'Royalty deals for brand IP'],
+      ['Publishing', 'Producing the game', 'Technical support for developers', 'Packaging for the target audience', 'Compliance with the 2026 rules'],
+      ['Distribution', 'Mobile app stores', 'Online stores', 'Retail game shops', 'Multi-game platforms'],
+      ['Monetisation', 'Advertisers', 'Subscriptions', 'E-sports sales and streaming', 'Data monetisation'],
+      ['Consumption', 'Phones and tablets', 'PCs and laptops', 'Consoles', 'Gaming centres'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Medium', 'Studios cannot be replaced, but publishers usually dwarf them.'],
+      ['buyers', 'High', 'Players are not loyal, can drop a game easily and care about price.'],
+      ['entrants', 'Medium', 'Developers are plentiful, so mobile is easy to enter; e-sports needs big investment.'],
+      ['substitutes', 'High', 'Games compete with every other way to spend leisure time.'],
+      ['rivalry', 'Medium', 'Depends on how distinctive a game is.'],
+    ]),
+    pestel: pairs([
+      ['Legal', 'The PROG Act bans money games, with jail terms of up to 3 years, and stops banks processing those payments.'],
+      ['Technology', 'AR, VR and AI tools. Cheap Android phones keep install size and data cost decisive.'],
+      ['Social', 'Women make up 44% of gamers overall and 50-52% in casual mobile games.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Rake fees and subscriptions', 'Advertising', 'In-app purchases', 'E-sports sales, streaming and merchandise'] },
+      { title: 'Cost drivers', items: ['Building and maintaining games', 'Licences', 'Publishing and distribution', 'Marketing'] },
+    ],
+    kpis: pairs([
+      ['DAU', 'People who use the app each day (MAU is the monthly version).'],
+      ['ARPU', 'Revenue divided by paying users.'],
+      ['CPM', 'Cost per thousand ad impressions.'],
+      ['Churn', 'Share of players who stop playing in a period.'],
+    ]),
+    terms: pairs([
+      ['AAA titles', 'Big-budget games from large studios such as Sony or Tencent.'],
+      ['MeitY', 'The Ministry of Electronics and IT, which sets IT and online gaming policy.'],
+      ['NPU', 'New paying users.'],
+    ]),
+    growth: [
+      'Cheap smartphones make about 90% of gamers mobile-first.',
+      'UPI, AI, AR and VR, and 5G help.',
+      'The government now recognises e-sports and competitive gaming.',
+    ],
+    challenges: [
+      'A US$2.3 billion category disappeared: real-money gaming was over 70% of revenue before the August 2025 ban.',
+      'Many former money-game users moved to illegal offshore betting sites out of regulators’ reach.',
+      'Back-end developers, game engineers and other technical staff are hard to find.',
+    ],
+    models: pairs([
+      ['Ad-supported', 'Free to play in full, paid for by advertising.'],
+      ['Freemium', 'Free to start, with paid features and in-app purchases.'],
+      ['Pay to play', 'Subscriptions or games bought before playing.'],
+      ['Traditional', 'Console or PC games sold on disc, now shifting to digital.'],
+    ]),
+    facts: [
+      'The ban removed the skill-versus-chance defence, so Dream11, MPL and Games24x7 all became free-to-play.',
+      'Former money-game players spent more time elsewhere: music streaming up 43%, micro-dramas 40%, social media 24%, OTT 20%.',
+      '72% of gamers prefer regional-language titles, which lifts demand for vernacular games.',
+      'Revenue now rests on ads and in-app purchases, forecast to grow 13% and 19% a year to 2030. The risk is whether they scale.',
+    ],
+    news: [
+      '1 May 2026: the Online Gaming Rules took effect, setting up OGAI and formalising the money-game ban.',
+      'Video games excluding money games grew 17% to US$1.5 billion in 2025, though gamers fell to 555 million.',
+      'Free casual titles drive growth now, and ads and in-app purchases have taken the place of cash stakes.',
+    ],
+    caseIds: [],
+  },
+  {
+    id: 'ott', name: 'OTT streaming', tag: 'Media', ...base(456),
+    summary: '216 million paid video subscriptions across 143 million homes in 2025, with subscription revenue up 60%.',
+    overview: [
+      'A few large players lead. India had 216 million paid video subscriptions across 143 million households in 2025, and subscription revenue rose 60% to about US$1.7 billion.',
+      'YouTube leads on viewing time and JioHotstar on paid scale. Rural homes hold 44% of subscriptions.',
+    ],
+    segments: [
+      'SVOD: paid subscriptions for ad-free tiers and originals',
+      'AVOD: free, ad-supported viewing, including sports, catch-up TV and films',
+      'Hybrid and bundles: telco, device and Prime bundles lower the effective price and widen reach',
+    ],
+    valueChain: chain([
+      ['Content', 'Buying rights to films, series and live sport', 'Commissioning regional originals', 'Production'],
+      ['Operations', 'Localisation', 'Encoding and DRM', 'CDN delivery', 'Apps for TV and mobile'],
+      ['Distribution', 'Own apps', 'Smart TV app stores', 'Telco billing', 'Bundles'],
+      ['Sales and marketing', 'Performance marketing', 'Big launches', 'Sports peaks', 'Creator tie-ups'],
+      ['Service', 'Managing churn', 'Profiles and parental controls', 'Payments', 'Complaints'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Medium', 'Studios, sports rights holders and telco bundles have leverage.'],
+      ['buyers', 'High', 'Switching is easy, and free tiers keep users price-sensitive.'],
+      ['entrants', 'Low', 'Scale needs heavy content spend, sports rights and distribution deals.'],
+      ['substitutes', 'Medium', 'YouTube, gaming, short video and broadcast sport compete for time.'],
+      ['rivalry', 'High', 'Price cuts, free sport, the originals race and alliances.'],
+    ]),
+    pestel: pairs([
+      ['Social', 'Multilingual and regional originals and sport drive viewing, and mass audiences want free access.'],
+      ['Technological', '4G and 5G, smart TVs and cheap data underpin viewing.'],
+      ['Legal', 'DPDP compliance and content codes are day-to-day priorities.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Advertising (AVOD, sport)', 'Subscriptions (SVOD)', 'Content licensing', 'Brand integrations'] },
+      { title: 'Cost drivers', items: ['Content rights and production', 'Technology platform', 'Marketing and acquisition', 'Payment fees'] },
+    ],
+    kpis: pairs([
+      ['MAUs', 'Overall reach.'],
+      ['Watch time per user', 'The core measure of engagement.'],
+      ['ARPU', 'How well the platform monetises users.'],
+      ['Churn', 'Share of paying subscribers lost in a period, critical for SVOD profit.'],
+      ['Free-to-paid conversion', 'How hybrid and ad-first platforms grow their paid base.'],
+    ]),
+    terms: pairs([
+      ['Peak concurrency', 'The most people watching at once during an event.'],
+      ['Originals vs licensed', 'Content the platform owns versus content it buys in.'],
+      ['Windowing', 'Releasing content in sequence across platforms and formats.'],
+    ]),
+    growth: [
+      '4G, 5G and smart TVs give OTT a bigger share of viewing time.',
+      'Sports bring mass audiences and advertisers.',
+      'Consolidation and bundles improve economics and distribution.',
+    ],
+    challenges: [
+      'Paid subscriptions are soft: price sensitivity and password sharing push viewers to free tiers.',
+      'Content spending fell 18% to about US$260 million and volume 7%, which may make platforms look alike.',
+      'Advertisers expect better measurement and brand safety.',
+    ],
+    models: pairs([
+      ['AVOD', 'Free viewing paid for by ads, common for mass sport and catch-up TV.'],
+      ['SVOD', 'Monthly or annual plans for premium, ad-free viewing, downloads and 4K.'],
+      ['Hybrid', 'Cheaper ad tiers, pay-per-view for big events, and telco or device bundles.'],
+      ['Licensing and syndication', 'Licensing the library, co-producing with studios and sublicensing sport.'],
+    ]),
+    facts: [
+      'SVOD earns about 46% of streaming revenue.',
+      'Content spend fell 18% and volume 7% in 2025 as platforms backed reality shows and big titles over experiments.',
+      'After the Hotstar-JioCinema merger, JioHotstar brought sport and international content together.',
+      'Digital is the biggest media and entertainment segment by revenue and keeps growing faster than the rest.',
+      'Rural homes are 44% of paid subscriptions, which is where the next wave will come from.',
+    ],
+    news: [
+      'FICCI-EY counted 216 million paid video subscriptions across 143 million homes in 2025, with revenue up 60%.',
+      'Platforms cut content budgets 18% in 2025, putting money into reality formats and big films.',
+      'With 33.6 million unique viewers a week, JioHotstar is back on top, ahead of Prime Video and Netflix.',
+    ],
+    caseIds: ['ott-hindi-acquisition', 'streaming-bid'],
+  },
+]

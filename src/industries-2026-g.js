@@ -1,0 +1,312 @@
+// Continued: same source, same rules (own words, source facts only).
+import { base, chain, forces, pairs } from './industries-2026-b.js'
+
+export const INDUSTRIES_2026_G = [
+  {
+    id: 'payments', name: 'Payments', tag: 'Financial services', ...base(458),
+    summary: 'UPI handled 241.6 billion transactions worth US$3.3 trillion in FY26, about 85% of digital payment volume.',
+    overview: [
+      'In FY26 UPI alone carried 241.6 billion transactions worth US$3.3 trillion, about 85% of digital payment volume.',
+      'The system is anchored by banks and regulated by the RBI, while banks and fintechs run the front end.',
+    ],
+    segments: [
+      'UPI: 241.6 billion transactions worth US$3.3 trillion in FY26, up 30%',
+      'Cards: credit card spend up 12% to US$248 billion, debit card use falling',
+      'Prepaid instruments and wallets: a record 9.9 billion transactions, about 3.5% of retail volume',
+      'FASTag and bill pay: 4.45 billion transactions and US$8.7 billion of tolls, now fully digital',
+    ],
+    valueChain: chain([
+      ['Consumer', 'Pays merchants by app, QR or net banking, online or in store', 'Wants convenience, speed and low cost'],
+      ['Issuer', 'Gives consumers accounts or cards', 'Approves or declines each payment'],
+      ['Network', 'Runs the rails that route and settle payments', 'Passes data and settles money between acquirer and issuer'],
+      ['Acquirer', 'Signs up merchants', 'Lets them accept electronic payments', 'Settles funds from issuer to merchant'],
+      ['Merchant', 'Accepts payment by QR, terminal or UPI', 'Pays a percentage fee (MDR)'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Medium', 'NPCI and the card networks control the essential rails and their fees.'],
+      ['buyers', 'High', 'Switching is easy and products are fairly similar.'],
+      ['entrants', 'Low', 'RBI licences, network effects and trust make scaling hard.'],
+      ['substitutes', 'Medium', 'Cash and wallets remain, though cash keeps shrinking.'],
+      ['rivalry', 'High', 'Payment providers compete hard, which hits pricing.'],
+    ]),
+    pestel: pairs([
+      ['Political', 'The ban on MDR ended in August 2026, and the push for cross-border UPI shapes structure and profits.'],
+      ['Technological', 'UPI keeps reaching further through India Stack, UPI Lite X, credit lines on UPI and trials of AI-agent payments.'],
+      ['Legal', 'Data protection and consumer law. NPCI’s 30% market share cap is now due in December 2026.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Transaction volume', 'Merchant discount rate (MDR)', 'Subscription fees'] },
+      { title: 'Cost drivers', items: ['Compliance and licences', 'Technology and infrastructure', 'Acquiring and supporting customers', 'Fraud and chargebacks'] },
+    ],
+    kpis: pairs([
+      ['Payment success rate', 'Share of payments that go through.'],
+      ['Volume and value', 'Number and value of transactions in a period.'],
+      ['Cart abandonment', 'Drop-offs caused by clunky checkout or security worries.'],
+      ['Chargeback ratio', 'Disputes and fraud as a share of transactions.'],
+      ['Uptime', 'Share of time the system is working.'],
+    ]),
+    terms: pairs([
+      ['MDR', 'The merchant discount rate: what a merchant pays to process a digital payment, usually a percentage.'],
+      ['NPCI', 'The body that runs UPI, RuPay, FASTag and other rails.'],
+      ['Interchange', 'The issuer’s cut of the MDR, as much as 1.1% for PPI payments over UPI.'],
+    ]),
+    growth: [
+      'UPI keeps growing at home and linking abroad, adding volume.',
+      'India Stack (Aadhaar, eKYC, interoperable QR) lets providers sign up users fast and at scale.',
+    ],
+    challenges: [
+      'Weak digital literacy and patchy infrastructure still slow rural adoption.',
+      'Digital payments attract fraud and breaches, so security has to be strong.',
+      'The main rail has earned nothing since 2020, and state incentives cover only about 11% of the cost.',
+    ],
+    models: pairs([
+      ['Payment gateway', 'Links merchants, customers and financial institutions and moves money securely (Razorpay, PayU).'],
+      ['UPI and wallet apps', 'Move money between bank accounts or app wallets (Google Pay, PhonePe, Paytm).'],
+      ['Payment networks', 'Connect banks, merchants and consumers to process payments (AmEx, Visa, RuPay).'],
+      ['Fintech start-ups', 'Add new payment products plus services such as lending and security (BharatPe, CRED).'],
+    ]),
+    facts: [
+      'MDR came back in August 2026, and a charge of about 0.4% on payments above ₹2,000 for large merchants is being discussed.',
+      'UPI works in 11 countries, including Singapore, the UAE, Mauritius and Sri Lanka, and the RBI wants 20 by FY29.',
+      'RuPay credit cards on UPI already carry about 16% of credit card spend, opening up premium volume.',
+      'FASTag handled 4.45 billion transactions and US$8.7 billion of tolls in FY26, and toll plazas went fully digital on 1 April 2026.',
+      'PhonePe and Google Pay process about 80% of UPI volume, and NPCI’s 30% cap has slipped to December 2026.',
+    ],
+    news: [
+      'August 2026: an amendment to the Payment and Settlement Systems Act ended zero-MDR on UPI and RuPay debit.',
+      '1 April 2026: every national highway toll plaza went fully digital, ending cash tolls.',
+      'UPI turned ten in FY26 as the world’s biggest real-time payment system, with 241.6 billion transactions.',
+    ],
+    caseIds: ['bnpl-uae-entry'],
+  },
+  {
+    id: 'pharma', name: 'Pharmaceuticals', tag: 'Healthcare', ...base(460),
+    summary: 'The world’s 3rd-largest producer by volume: a US$60 billion market with US$31.1 billion of exports in FY26.',
+    overview: [
+      'India makes the third-most medicines in the world by volume. The market is US$60 billion in 2026 and exports were US$31.1 billion in FY26.',
+      'It is a leading exporter of generic formulations and has a big branded-generics market at home. Biosimilars and vaccines are growing.',
+    ],
+    segments: [
+      'Prescription drugs for complex illnesses, usually patented',
+      'Generics, which anyone can make once the patent ends',
+      'Over-the-counter generics sold without a prescription',
+      'Wellness products such as protein powders and cold-pressed oils',
+    ],
+    valueChain: chain([
+      ['Research and discovery', 'Finding drugs, a long and low-odds process', 'Formulating or licensing existing formulas'],
+      ['Development and approvals', 'Human clinical trials', 'Marketing approval from the health ministry', 'Patents'],
+      ['Manufacturing', 'Setting up lines', 'Buying intermediates, APIs and solvents', 'Technology transfer to scale up', 'Quality control', 'Packaging'],
+      ['Outbound logistics', 'Cold chain storage and transport', 'Supplying wholesalers and distributors', 'Exports'],
+      ['Marketing and sales', 'Doctors’ endorsement', 'Direct advertising (OTC only)', 'Medical conferences', 'Managing the product’s life cycle'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Low', 'Most raw materials and equipment have several suppliers.'],
+      ['buyers', 'Medium', 'Retail patients have little power, but hospital chains have a lot.'],
+      ['entrants', 'Low', 'Heavy regulation and large capital needs.'],
+      ['substitutes', 'Low', 'Little replaces medicine, apart from options like Ayurveda.'],
+      ['rivalry', 'High', 'Big established firms plus many small ones.'],
+    ]),
+    pestel: pairs([
+      ['Social', 'An older population and less active lives mean more health spending.'],
+      ['Legal', 'Allowing some therapeutic drugs to be sold without prescription, via the National Medical Council, should lift generic sales.'],
+      ['Political', 'A ₹60,000 crore API push (December 2025), Biopharma SHAKTI for biologics, and revised Schedule-M GMP rules mandatory from December 2025.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Drug sales', 'Licensing', 'Contract manufacturing', 'Contract R&D'] },
+      { title: 'Cost drivers', items: ['R&D', 'Manufacturing', 'Distribution and storage', 'Marketing'] },
+    ],
+    kpis: pairs([
+      ['Time to market', 'How long a drug takes from discovery to launch.'],
+      ['Return on research capital', 'This year’s gross profit divided by last year’s R&D spend.'],
+      ['Health outcome improvement', 'How much the product improves patients’ health.'],
+      ['Trial success rate', 'Share of clinical trials that meet their endpoints.'],
+    ]),
+    terms: pairs([
+      ['Generics', 'Off-patent drugs that others may copy.'],
+      ['OTC', 'Drugs sold directly to customers without a prescription.'],
+      ['API', 'Active pharmaceutical ingredient: the part of a drug that does the work.'],
+    ]),
+    growth: [
+      'Insurance and awareness push up health spending.',
+      'Low production costs keep demand for Indian generics strong abroad.',
+      'Trade deals with the EU, UK and New Zealand open markets.',
+    ],
+    challenges: [
+      'Key raw materials depend heavily on China.',
+      'The US takes about 30% of exports, which fell about 10% in FY26, and the tariff review may reach generics.',
+      'Drug discovery needs a lot of capital and many years.',
+    ],
+    models: pairs([
+      ['Generic and specialty maker', 'Makes generic and specialty drugs and sells them through direct and indirect channels.'],
+      ['Licensing', 'Patents a drug and licenses the formula to other makers. Patents usually last up to 20 years.'],
+      ['Contract research and manufacturing', 'Does specific research or production for other companies.'],
+    ]),
+    facts: [
+      'Online pharmacies such as Tata 1mg, Flipkart Health and PharmEasy make generic and specialty drugs easier to get.',
+      'Indian pharma has invested little in R&D and mostly makes generics.',
+      'Big Indian firms earn more than half their revenue abroad: about 30% from the US and 19% from Europe.',
+      'The FDA has temporarily barred some Indian drugmakers from the US market.',
+      'Sales depend on doctors’ endorsement, so working with them through sales reps matters.',
+      'Jan Aushadhi runs 16,912 kendras and aims for 25,000 by March 2027.',
+    ],
+    news: [
+      'Since April 2026, patented medicines and APIs entering the US face a 100% Section 232 duty, but generics and biosimilars do not.',
+      'FY26 exports topped US$31.1 billion, but weaker US buying cut March shipments by 23%.',
+      'US shipments fell about 10% in FY26 to US$9.47 billion, 30.4% of pharma exports, amid tariff uncertainty.',
+    ],
+    caseIds: ['anti-smoking-pill'],
+  },
+  {
+    id: 'power-utilities', name: 'Power and utilities', tag: 'Energy', ...base(462),
+    summary: '520.5 GW installed by January 2026, peak demand of 271 GW, and DISCOMs’ first-ever profit in FY25.',
+    overview: [
+      'Installed capacity was 520.5 GW in January 2026, but thermal, nuclear and hydro still produce most of the power actually generated.',
+      'By ownership, private companies hold about 55%, states about 23% and the centre about 22%.',
+    ],
+    segments: [
+      'Generation: coal, gas and nuclear, about 55% private',
+      'Transmission: PowerGrid and state utilities, 5 lakh circuit km',
+      'Distribution and retail: state DISCOMs, private licensees and franchisees',
+      'Trading and exchanges: IEX and PXIL short-term markets, open access and captive power',
+    ],
+    valueChain: chain([
+      ['Fuel', 'Coal linkages, imports and washeries', 'Gas and nuclear fuel', 'Fuel supply agreements and logistics'],
+      ['Generation', 'Thermal (coal, lignite, gas)', 'Nuclear', 'Large hydro and pumped storage', 'Dispatching plants by merit order'],
+      ['Transmission', 'Delivering power over low-voltage lines through distributors such as CESC and BESCOM', 'Long-term PPAs and short-term trades'],
+      ['Distribution and retail', 'DISCOM last-mile supply', 'PPAs and short-term buying', 'Metering, billing and collection'],
+      ['Customers and markets', 'Homes, businesses and industry', 'Open access and captive supply', 'Power exchanges and trading'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Medium', 'Key resources come from several suppliers.'],
+      ['buyers', 'Low', 'The government regulates what end consumers pay.'],
+      ['entrants', 'Low', 'High capital and regulatory barriers.'],
+      ['substitutes', 'Medium', 'More and more renewable sources.'],
+      ['rivalry', 'High', 'Government and private players compete for share.'],
+    ]),
+    pestel: pairs([
+      ['Political', 'Smart meters under RDSS, the Late Payment Surcharge rules, and the 2026 draft electricity policy.'],
+      ['Economic', 'DISCOMs made a first-ever profit of ₹2,701 crore in FY25, and dues to generators fell below ₹50,000 crore.'],
+      ['Technological', 'Smart and prepaid meters and better load despatch to handle a variable grid.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Regulated tariffs (capacity plus energy)', 'Cross-subsidy surcharge on open access', 'Short-term trading and merchant sales', 'Transmission charges (regulated return on equity)'] },
+      { title: 'Cost drivers', items: ['Buying power (75-80% of DISCOM cost)', 'Fuel: coal, freight, gas', 'Transmission and distribution losses and theft', 'O&M, staff and interest'] },
+    ],
+    kpis: pairs([
+      ['Plant load factor', 'Actual generation as a share of the maximum possible, the thermal utilisation measure.'],
+      ['AT&C losses', 'Technical plus commercial losses, down to 15.0% in FY25 from 21.9% in FY21.'],
+      ['ACS-ARR gap', 'Cost of supply less revenue per unit, now ₹0.06 per kWh, from ₹0.69.'],
+      ['Collection efficiency', 'Revenue collected as a share of revenue billed.'],
+    ]),
+    terms: pairs([
+      ['DISCOM', 'A regional distribution company with a licensed monopoly on last-mile supply.'],
+      ['Open access', 'Big consumers buying straight from a generator or exchange, bypassing the DISCOM.'],
+      ['Merit order', 'Running plants from cheapest to most expensive to keep cost down.'],
+    ]),
+    growth: [
+      'Demand is outrunning supply: peak demand hit 271 GW in May 2026, and the CEA expects 6% a year.',
+      'A ₹9.15 lakh crore plan will take transmission to 6.48 lakh circuit km by 2032.',
+      'DISCOM reform is working: AT&C losses are at 15.0% and the ACS-ARR gap has almost closed.',
+    ],
+    challenges: [
+      'The DISCOM recovery is fragile: the first profit came in FY25 and depends on when subsidies arrive.',
+      'Factories and offices are buying direct or generating their own, taking away the best-paying customers.',
+      'Coal still carries the system, both for baseload and for flexible demand.',
+    ],
+    models: pairs([
+      ['Generation', 'Generators run plants and sell power to distribution companies.'],
+      ['Distribution', 'DISCOMs sign PPAs with generators at fixed tariffs for their regions.'],
+      ['Trading', 'Online platforms where generators, consumers and traders buy and sell power.'],
+      ['Infrastructure', 'Maintaining and leasing generation and distribution assets.'],
+      ['Energy as a service', 'Digital tools and distributed resources to supply and manage energy.'],
+    ]),
+    facts: [
+      'DISCOMs turned around: a ₹2,701 crore profit in FY25 against a ₹67,962 crore loss in FY14, and dues to generators fell from ₹1.4 lakh crore to under ₹50,000 crore.',
+      '7.24 crore smart meters were installed by August 2026, out of 20.33 crore sanctioned, the world’s largest rollout.',
+      '75-80% of a DISCOM’s cost is buying power, so its PPA mix matters more than its running costs.',
+      'The Draft National Electricity Policy 2026 recasts coal as flexible balancing power rather than fixed baseload.',
+      'Promises of free power can undo tariff discipline faster than reform builds it.',
+    ],
+    news: [
+      'Installed capacity reached 520.5 GW in January 2026 after a record 52.5 GW was added in FY26.',
+      'DISCOMs made their first-ever profit, ₹2,701 crore, in FY25 as AT&C losses dropped to 15.0%.',
+      'May 2026 set a 271 GW peak-demand record, and the grid had almost no spare margin.',
+    ],
+    caseIds: [],
+  },
+  {
+    id: 'quick-commerce', name: 'Quick commerce', tag: 'Retail', ...base(464),
+    summary: 'US$13-14 billion in FY26, about 17% of online retail and growing about 120%. Blinkit leads with 46%.',
+    overview: [
+      'Three companies have almost the whole market. FY26 sales were US$13-14 billion, about 17% of online retail, growing about 120% a year.',
+      'Blinkit has about 46%, Instamart about 24% and Zepto about 22%.',
+    ],
+    segments: [
+      'Instant delivery in 10-30 minutes (Blinkit, Zepto)',
+      'Scheduled delivery in a chosen slot (BigBasket)',
+      'Subscriptions for recurring essentials (BB Daily)',
+      'Retailers joining in: Flipkart Minutes, JioMart Express and others',
+    ],
+    valueChain: chain([
+      ['Sourcing', 'Vendor management', 'Category planning', 'Pricing and margin', 'Quality checks', 'Private label'],
+      ['Fulfilment', 'Setting up dark stores', 'Inventory', 'Warehouse operations', 'Tech integration', 'Staffing'],
+      ['Ordering', 'The app', 'Order management', 'Keeping inventory in sync', 'Payment gateway'],
+      ['Last mile', 'Managing riders', 'Dynamic routing', 'Delivery time targets', 'Live ETAs and tracking'],
+      ['Customer experience', 'Personalisation and CRM', 'Support and feedback', 'Loyalty and subscriptions', 'Refunds and returns'],
+    ]),
+    forces: forces([
+      ['suppliers', 'Low', 'A wide range of products limits any one brand’s leverage.'],
+      ['buyers', 'High', 'Switching is free and the apps offer much the same.'],
+      ['entrants', 'Medium', 'The model is easy to copy but needs heavy spending on dark stores and logistics.'],
+      ['substitutes', 'Medium', 'Kirana stores, supermarkets and e-commerce meet the same needs.'],
+      ['rivalry', 'High', 'Well-funded players fight on price and speed.'],
+    ]),
+    pestel: pairs([
+      ['Political', 'The government’s ONDC network aims to help kirana stores compete with the big apps.'],
+      ['Technological', 'Apps forecast demand to stock each store and use routing software to speed delivery.'],
+      ['Environmental', 'Packaging waste and emissions per order are pushing electric fleets and greener packing.'],
+    ]),
+    drivers: [
+      { title: 'Revenue drivers', items: ['Product sales and commissions', 'Delivery charges', 'Advertising and brand promotions', 'Subscriptions and loyalty', 'Private labels'] },
+      { title: 'Cost drivers', items: ['Buying and managing stock', 'Logistics and delivery', 'Warehouses and infrastructure', 'Marketing and technology'] },
+    ],
+    kpis: pairs([
+      ['Customer acquisition cost', 'Average cost to win one customer.'],
+      ['MAU', 'Unique customers in a month.'],
+      ['Average order value', 'Average spend per order.'],
+      ['Stockout rate', 'Share of items unavailable when customers want them.'],
+    ]),
+    terms: pairs([
+      ['Zoning or geo-fencing', 'Splitting the service area into precise zones to manage demand and assign deliveries.'],
+      ['SKU rationalisation', 'Cutting the range down to the best-selling, most profitable items.'],
+    ]),
+    growth: [
+      'Dense cities have made 10-minute delivery the norm for top-up shopping.',
+      'Over 1,200 dark stores in the 20 largest cities mean more products can arrive in minutes.',
+      'Categories are spreading beyond groceries into electronics, beauty, toys and medicines.',
+    ],
+    challenges: [
+      'Profit is still elusive: Instamart came within 0.2% of order value of breaking even only in Q1 FY27.',
+      'Small orders, heavy discounts and costly dark stores make it dearer to run than e-commerce.',
+    ],
+    models: pairs([
+      ['Dark store', 'Its own fulfilment centres for the fastest delivery (Zepto, Blinkit).'],
+      ['Hybrid logistics', 'Uses an existing delivery network (Swiggy Instamart).'],
+      ['Kirana partner', 'Uses neighbourhood shops for the last mile (ONDC).'],
+      ['Omnichannel extension', 'Big retailers adding quick delivery to their marketplaces (Flipkart Minutes, JioMart Express).'],
+    ]),
+    facts: [
+      'Big cities become profitable first, while smaller ones still lose money on each order.',
+      'Blinkit’s parent moved to owning its stock, which gives more control and margin but ties up cash.',
+      'It takes trips from everyone: kirana stores, supermarkets and scheduled e-commerce.',
+      'Over 400,000 gig workers, with high attrition and growing scrutiny of pay and conditions.',
+      'The competition authority has looked at deep discounting and pricing below cost.',
+    ],
+    news: [
+      'Quick commerce ended FY26 at US$13-14 billion, about 17% of online retail, up roughly 120%.',
+      'Q1 FY27: Instamart’s loss narrowed to 0.2% of order value, nearly breakeven.',
+      'Market shares: Blinkit about 46%, Instamart 24%, Zepto 22%.',
+    ],
+    caseIds: ['qcomm-membership-price', 'qexpress-due-diligence', 'egrocery-slotted-decline'],
+  },
+]

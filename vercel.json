@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/brain", "destination": "/index.html" },
+    { "source": "/mental", "destination": "/index.html" },
+    { "source": "/cases", "destination": "/index.html" },
+    { "source": "/cards", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" }
+  ]
+}
